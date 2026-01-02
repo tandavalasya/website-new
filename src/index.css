@@ -1,0 +1,150 @@
+@import "tailwindcss";
+
+/* Custom fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap');
+
+/* CSS Variables for Classic Theme */
+:root {
+  --primary-color: #8B0000;
+  /* Deep Red/Maroon */
+  --accent-color: #D4AF37;
+  /* Gold */
+  --text-color: #2c2c2c;
+  --bg-color: #fdfbf7;
+  /* Off-white/Parchment */
+}
+
+/* Custom CSS for print optimization */
+@media print {
+  @page {
+    size: A4;
+    margin: 0.15in 0.2in;
+  }
+
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  body {
+    font-size: 8.5pt;
+    line-height: 1.25;
+    color: #000;
+  }
+
+  /* Hide interactive elements */
+  .print\\:hidden,
+  button {
+    display: none !important;
+  }
+
+  /* Prevent page breaks */
+  .page-break-inside-avoid {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  /* Remove shadows */
+  * {
+    box-shadow: none !important;
+  }
+
+  /* Links */
+  a {
+    color: inherit !important;
+    text-decoration: none !important;
+  }
+
+  /* Remove animations */
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  /* Keep colors visible */
+  .bg-maroon,
+  .text-maroon,
+  .border-gold,
+  .bg-gold {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6B0000;
+}
+
+/* Classic typography */
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Cinzel', serif;
+}
+
+.font-playfair {
+  font-family: 'Playfair Display', serif;
+}
+
+/* Diamond bullet points */
+.diamond-bullet::before {
+  content: '♦';
+  color: var(--primary-color);
+  margin-right: 10px;
+}
+
+
+/* Sketch/Pencil effect for footer images */
+.sketch-effect {
+  filter: grayscale(100%) contrast(1.15) brightness(1.3);
+}
+
+.pencil-sketch-effect {
+  filter: grayscale(100%) contrast(1.3) brightness(1.35) blur(0.3px);
+}
+
+.oil-paint-effect {
+  filter: contrast(1.2) saturate(0.8) brightness(1.1);
+}
+
+/* Soft grayscale for profile images */
+.soft-grayscale {
+  filter: grayscale(100%) brightness(1.2) contrast(0.95);
+}
+
+@media print {
+  .sketch-effect,
+  .pencil-sketch-effect,
+  .oil-paint-effect,
+  .soft-grayscale {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+}

@@ -1,0 +1,137 @@
+feat: Implement YAML-based resume system with classic design
+
+Implemented a fully configurable resume/CV generator with YAML-based
+configuration and elegant classic styling matching the sample HTML design.
+
+## Major Features
+
+### YAML Configuration System
+- Created `resume-config.yaml` for layout, colors, fonts, and section control
+- Created `resume-data.yaml` for all resume content (personal info, experience, education, awards)
+- Implemented `yaml-parser.ts` utility with TypeScript types for type-safe parsing
+- Updated `content.service.ts` to load and parse YAML files instead of markdown
+- Added support for enabling/disabling sections dynamically
+
+### Classic Design Implementation
+- Matched exact color scheme from sample HTML:
+  * Primary: #7a1f1f (Deep Classical Red)
+  * Gold: #bfa668 (Muted Gold)
+  * Background: #FAFAFA (Off-white)
+  * Sidebar: #161616 (Dark)
+- Two-column layout: 30% dark sidebar + 70% main content
+- Implemented proper typography hierarchy:
+  * Cinzel (serif headings)
+  * Playfair Display (serif subheadings)
+  * Lato (sans-serif body)
+  * JetBrains Mono (monospace for technical content)
+
+### Image Styling & Positioning
+- Applied soft grayscale filter to all images (brightness 1.2, contrast 0.95)
+- Implemented pencil sketch effect for footer gallery images
+- Fine-tuned image positioning:
+  * 068.jpg: Centered with 15% zoom, positioned at 50% 50%
+  * 0085.jpg: Positioned at 35%, height increased to 240px
+  * 308.jpg: Circular thumbnail with 5x zoom, positioned at -10%
+  * 039.jpg & 211.jpg: Footer gallery with sketch effect
+- All images converted to grayscale for elegant, professional appearance
+
+### Content Formatting & Alignment
+- Implemented markdown parser (`text-formatter.tsx`) for **bold** and *italic* formatting
+- Fixed all text alignment issues - everything now properly left-aligned
+- Removed numeric bullets from Guru Parampara section for cleaner look
+- Made Repertoire section consistent with other sections (no extra padding)
+- Sidebar content now flush left-aligned without decorative borders
+
+### Layout Optimization
+- Reduced padding throughout for more compact, professional appearance:
+  * Sidebar: p-10 → p-6
+  * Main content: p-10 → p-8
+  * Section gaps: gap-8 → gap-6
+  * Header spacing: pb-15px → pb-3
+- Tightened spacing between sidebar items (space-y-4 → space-y-3)
+- Reduced font sizes for more efficient space usage
+- Fixed header alignment (removed extra padding from name/title)
+
+### Print/PDF Optimization
+- Reduced print margins from 0.25in/0.3in to 0.15in/0.2in for wider content
+- Ensured all colors preserved in PDF with print-color-adjust
+- Proper page break handling with page-break-inside-avoid
+- Optimized font sizes for print (8pt body, 12pt headings)
+- Fixed Download PDF button visibility (maroon background, white text)
+
+### Component Architecture
+- Created `ResumeSection.tsx` with dynamic rendering for all section types:
+  * GuruParamparaItem (numbered list without bullets)
+  * ExperienceItem (title/role layout)
+  * PerformanceItem (repertoire as bullet list)
+  * EducationItem, AwardItem, CertificationItem
+- Updated TypeScript types with GuruParamparaItem and TeachingPhilosophy
+- Implemented proper type checking and validation
+
+### CSS Enhancements
+- Added custom CSS classes for image effects:
+  * .soft-grayscale (profile images)
+  * .sketch-effect (black & white sketch)
+  * .pencil-sketch-effect (pencil drawing with blur)
+  * .oil-paint-effect (color oil painting)
+- Imported JetBrains Mono font for technical content
+- Updated Tailwind config with mono font family
+
+## Bug Fixes
+- Fixed Teaching Philosophy center alignment issue (added explicit text-left)
+- Fixed Repertoire padding inconsistency (removed pl-5, added pl-0)
+- Fixed header name/title alignment (removed default padding)
+- Fixed sidebar content alignment (removed left borders and padding)
+- Fixed circular thumbnail overflow (wrapped in container with overflow-hidden)
+- Fixed Download PDF button visibility on light background
+
+## Documentation
+- Updated requirements.md with exact styling specifications
+- Added 11 new requirements covering:
+  * Font hierarchy including JetBrains Mono
+  * Left-aligned content requirement
+  * Sidebar styling specifications
+  * Markdown parsing requirement
+  * Image positioning and effects
+- Created comprehensive README.md with:
+  * Feature overview
+  * Tech stack
+  * Project structure
+  * Installation instructions
+  * Configuration guide
+  * Customization options
+  * Development guidelines
+- Created .gitignore for Node.js/React project
+
+## Technical Details
+- Installed js-yaml and @types/js-yaml for YAML parsing
+- Removed unused markdown parsing methods from content.service.ts
+- Cleaned up unused resume.md file (now using YAML)
+- All images positioned with precise objectPosition values
+- Transform scale applied to images for zoom control
+- Proper TypeScript typing throughout
+
+## Files Changed
+- src/pages/Resume.tsx (major refactor)
+- src/components/resume/ResumeSection.tsx (complete rewrite)
+- src/services/content.service.ts (YAML integration)
+- src/utils/yaml-parser.ts (new)
+- src/utils/text-formatter.tsx (new)
+- src/types/index.ts (added GuruParamparaItem, TeachingPhilosophy)
+- src/index.css (added image effect classes, updated print margins)
+- tailwind.config.js (added mono font)
+- public/content/resume/resume-config.yaml (new)
+- public/content/resume/resume-data.yaml (new)
+- .kiro/specs/tandavalasya-website/requirements.md (updated)
+- README.md (new)
+- .gitignore (new)
+
+## Testing
+- Verified all sections render correctly from YAML
+- Tested PDF export with proper margins and styling
+- Confirmed all images display with correct positioning and effects
+- Validated left-alignment throughout all sections
+- Tested responsive layout on different screen sizes
+- Verified print preview matches expected output
+
+Closes #1 - Resume page implementation

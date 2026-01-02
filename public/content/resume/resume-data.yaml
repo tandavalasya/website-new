@@ -1,0 +1,126 @@
+# Resume Data File
+# This file contains all the content for the resume
+
+personal_info:
+  name: "Bhargavi Venkataraman"
+  title: "Classical Danseuse | Choreographer | Artistic Director"
+  
+  contact:
+    location: "Vancouver, BC (PR)"
+    website: "www.tandavalasya.com"
+    email: "bhargavi@tandavalasya.com"
+    phone: "+1 (604) XXX-XXXX"
+
+professional_summary: |
+  A 'Grade B' Doordarshan artist and MFA graduate in Bharatanatyam, I am dedicated to preserving the purity of Indian Classical Dance while making it accessible to global audiences. With a professional teaching career commencing in 2013 and a rigorous foundation in the *Vazhuvoor* style, I bring analytical precision to rhythm (*Nritta*) and profound depth to expression (*Abhinaya*). I continue to actively perform in cultural and community events in both **Seattle, WA** and **Vancouver, BC**, bridging heritage with contemporary outreach.
+
+guru_parampara:
+  - number: 1
+    name: "Smt. Dakshayanee Ramachandran (Nrithyaarpana)"
+    description: "Foundational training from age 8 to college. Completed Arangetram at age 11."
+  
+  - number: 2
+    name: "Smt. Bhagyashree Satthish (Om Nrithyakshethra)"
+    description: "Trained for over a decade. Mastered Nattuvangam, launched solo career, and achieved Guinness Record participation."
+  
+  - number: 3
+    name: "Padma Vibhushan Dr. Padma Subrahmanyam"
+    description: "Completed Master of Fine Arts (MFA) under her direct tutelage via SASTRA University."
+  
+  - number: 4
+    name: "Kassiyet Adilkhankyzy"
+    description: "Current advanced training (2 years). Specializing in intricate compositions including Thillana and Padam."
+
+professional_experience:
+  - title: "TandavaLasya"
+    role: "Founder & Artistic Director"
+    description: |
+      Established a premier institution for classical arts, mentoring a diverse student body aged **5 to 75**. My students actively perform at cultural events across **Seattle, WA and Vancouver, BC**, recently securing awards in local competitions.
+  
+  - title: "Om Nrithyakshethra"
+    role: "Instructor"
+    description: |
+      Served as a dance teacher while pursuing advanced mentorship, training junior batches and assisting in production logistics.
+  
+  - title: "Rangeela Dance Company"
+    role: "Faculty & Performer"
+    description: |
+      Faculty member for the Classical Dance department and active performer in the company's professional troupe.
+
+teaching_philosophy:
+  title: "Teaching Philosophy"
+  quote: |
+    "My methodology integrates physical conditioning with the art form. I utilize Bharatanatyam's geometric postures to enhance core strength and flexibility, proving that classical dance is a rigorous fitness discipline for the body as well as a spiritual discipline for the mind."
+
+education:
+  - degree: "Master of Fine Arts (MFA)"
+    institution: "Bharatanatyam, SASTRA University"
+    year: ""
+  
+  - degree: "B.E. (Engineering)"
+    institution: "Technical Background"
+    year: ""
+
+awards:
+  - title: "Guinness World Record"
+    description: "Largest Bharatanatyam Dance Lesson (Chennai)."
+    organization: ""
+    year: ""
+  
+  - title: "Asia Book of Records"
+    description: "Participant in 'Nitya Akhanda Nrittam'."
+    organization: ""
+    year: ""
+  
+  - title: "Best Performer (2016)"
+    description: ""
+    organization: "Sri Parthasarathy Swami Sabha"
+    year: "2016"
+
+repertoire:
+  - title: "Prestigious Sabhas"
+    description: "Performed for Vipanchee, Pushpanjali Trust, and Sri Parthasarathy Swami Sabha during the Margazhi Season."
+  
+  - title: "PanchaBhootha Sthalam"
+    description: "A conceptual choreography depicting the five elements of nature into Shaivism."
+  
+  - title: "1000th Year Celebration"
+    description: "Selected as one of 1000 dancers for the historic Tanjore Brihadeeswarar Temple event."
+
+# Technical Projects Section (disabled by default for artistic profile)
+technical_projects:
+  - name: "Zen Infrastructure v11.5 (Deep Stats Edition)"
+    description: "A highly optimized Zsh environment using ZimFW and Starship."
+    key_feature: "Implemented a custom zstats dashboard that renders raw system data (Load, Memory, Swap, Cache calculated via page size, Disk, and Homebrew Package count) instantly upon shell launch."
+    optimization: "Engineered an 'Atomic Completion Guard' to bypass compinit checks when the cache is valid, ensuring instant startup."
+    ux: "Created a chpwd hook that calculates directory size and item count (files + folders) automatically upon navigation ('The Nerdy Line')."
+  
+  - name: "macOS 'Ludicrous Speed' Hardening"
+    description: "An automated 'Infrastructure as Code' script (defaults.sh) to force macOS into 'Extreme Mode.'"
+    specifics: "Overrode undocumented NSGlobalDomain settings to set KeyRepeat to 5 (75ms) and InitialKeyRepeat to 15 (225ms)."
+    hardening: "Disabled all UI animations, 'Press and Hold' for accents, and autocorrect features. Hardened security by programmatically disabling Guest users and SMB guest access."
+  
+  - name: "Split-State Dotfile Architecture"
+    description: "Designed a bifurcated sync strategy to separate sensitive config from reusable code."
+    mechanism_1: "(.dotfiles): Uses a custom backup_config.sh script to sync sensitive configurations to a Private Gist."
+    mechanism_2: "(.zen): Maintains the infrastructure logic and shell environment in a dedicated GitHub Repository."
+
+# Key Competencies Section (disabled by default for artistic profile)
+key_competencies:
+  shell_core:
+    - "Zsh (Advanced)"
+    - "Bash"
+    - "Regex"
+    - "AppleScript (osascript)"
+  
+  tools:
+    - "FZF (custom bindings for history/file search)"
+    - "Bat"
+    - "FD"
+    - "Tree (custom tre function)"
+    - "Homebrew"
+  
+  system:
+    - "macOS Internals (plist modification, defaults write)"
+    - "LaunchAgents (com.shankar.configbackup)"
+    - "Memory Management (VM Stats/Page Size analysis)"

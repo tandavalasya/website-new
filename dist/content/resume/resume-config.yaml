@@ -1,0 +1,88 @@
+# Resume Configuration File
+# This file controls which sections are displayed and how they are styled
+
+resume:
+  profile: "artistic"  # Profile type: artistic, technical, academic
+  
+  layout:
+    sidebar_width: "30%"
+    main_width: "70%"
+    colors:
+      primary: "#7a1f1f"      # Deep Classical Red
+      gold: "#bfa668"          # Muted Gold
+      text: "#222"
+      background: "#FAFAFA"
+      sidebar_bg: "#161616"
+    
+    fonts:
+      heading: "Cinzel"        # Serif for headings
+      subheading: "Playfair Display"  # Serif italic for subtitles
+      body: "Lato"             # Sans-serif for body text
+  
+  # Section Configuration
+  sections:
+    enabled:
+      - professional_summary
+      - guru_parampara
+      - professional_experience
+      - education
+      - awards
+      - repertoire
+    
+    disabled:
+      - technical_projects
+      - key_competencies
+      - certifications
+    
+    # Order of sections in main content
+    order:
+      - professional_summary
+      - guru_parampara
+      - professional_experience
+      - repertoire
+  
+  # Sidebar Configuration
+  sidebar:
+    enabled:
+      - contact
+      - education
+      - awards
+    
+    profile_image: "068.jpg"
+    secondary_image: "0085.jpg"
+    
+    # Sidebar section order
+    order:
+      - profile_image
+      - contact
+      - education
+      - awards
+      - secondary_image
+  
+  # Header Configuration
+  header:
+    show_thumbnail: true
+    thumbnail_image: "211.jpg"
+    thumbnail_style: "circular"  # circular or square
+  
+  # Footer Configuration
+  footer:
+    show_gallery: true
+    gallery_images:
+      - "039.jpg"
+      - "308.jpg"
+    gallery_columns: 2
+  
+  # Watermark Configuration
+  watermark:
+    enabled: true
+    image: "240.jpg"
+    opacity: 0.04
+    position: "center"  # center, top-right, bottom-left
+  
+  # Print Configuration
+  print:
+    page_size: "A4"
+    margins: "0"
+    fit_to_page: true
+    preserve_colors: true
