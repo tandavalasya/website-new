@@ -12,7 +12,7 @@ import { AnimationWrapper } from '../ui/AnimationWrapper';
 
 interface ResumeSectionProps {
     title: string;
-    items: Array<EducationItem | ExperienceItem | PerformanceItem | AwardItem | CertificationItem | GuruParamparaItem | string>;
+    items: Array<EducationItem | ExperienceItem | PerformanceItem | AwardItem | CertificationItem | GuruParamparaItem>;
     delay?: number;
 }
 
