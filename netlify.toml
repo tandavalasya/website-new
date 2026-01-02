@@ -1,0 +1,63 @@
+# Netlify Configuration for TandavaLasya Website
+# https://docs.netlify.com/configure-builds/file-based-configuration/
+
+[build]
+  # Directory that contains the deploy-ready HTML files and assets
+  publish = "dist"
+  
+  # Build command
+  command = "npm run build"
+
+# Production context: all deploys from the main branch
+[context.production]
+  command = "npm run build"
+  publish = "dist"
+
+# Deploy Preview context: all deploys generated from a pull/merge request
+[context.deploy-preview]
+  command = "npm run build"
+  publish = "dist"
+
+# Branch deploy context: all deploys that are not from a pull/merge request
+[context.branch-deploy]
+  command = "npm run build"
+  publish = "dist"
+
+# Redirect rules for SPA (Single Page Application)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Headers for security and performance
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Environment variables (set these in Netlify UI if needed)
+# NODE_VERSION = "18"
+# NPM_VERSION = "9"

@@ -77,6 +77,13 @@ configuration and elegant classic styling matching the sample HTML design.
 - Imported JetBrains Mono font for technical content
 - Updated Tailwind config with mono font family
 
+### Deployment Configuration
+- Created `netlify.toml` for automatic Netlify deployment
+- Configured SPA routing with `_redirects` file
+- Added security headers (XSS protection, frame options)
+- Optimized caching for static assets (1 year)
+- Set up deploy previews and branch deploys
+
 ## Bug Fixes
 - Fixed Teaching Philosophy center alignment issue (added explicit text-left)
 - Fixed Repertoire padding inconsistency (removed pl-5, added pl-0)
@@ -101,7 +108,15 @@ configuration and elegant classic styling matching the sample HTML design.
   * Configuration guide
   * Customization options
   * Development guidelines
+  * Deployment instructions
 - Created .gitignore for Node.js/React project
+- Added Netlify deployment documentation
+
+## Project Structure
+- Flattened directory structure (moved from nested tandavalasya-website/)
+- Root now contains: .kiro/, .vscode/, src/, public/, package.json
+- Proper .gitignore with .kiro/ and .vscode/ tracked
+- Netlify configuration at root level
 
 ## Technical Details
 - Installed js-yaml and @types/js-yaml for YAML parsing
@@ -122,9 +137,12 @@ configuration and elegant classic styling matching the sample HTML design.
 - tailwind.config.js (added mono font)
 - public/content/resume/resume-config.yaml (new)
 - public/content/resume/resume-data.yaml (new)
+- public/_redirects (new)
 - .kiro/specs/tandavalasya-website/requirements.md (updated)
+- netlify.toml (new)
 - README.md (new)
 - .gitignore (new)
+- COMMIT_MESSAGE.txt (new)
 
 ## Testing
 - Verified all sections render correctly from YAML
@@ -133,5 +151,6 @@ configuration and elegant classic styling matching the sample HTML design.
 - Validated left-alignment throughout all sections
 - Tested responsive layout on different screen sizes
 - Verified print preview matches expected output
+- Tested Netlify deployment configuration
 
 Closes #1 - Resume page implementation

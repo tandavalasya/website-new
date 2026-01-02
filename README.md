@@ -28,18 +28,27 @@ A professional website for TandavaLasya - Classical Indian Dance Academy, featur
 - **Animations**: Framer Motion
 - **Content**: YAML + Markdown
 - **Fonts**: Google Fonts (Cinzel, Playfair Display, Lato, JetBrains Mono)
+- **Deployment**: Netlify
 
 ## 📁 Project Structure
 
 ```
 tandavalasya-website/
+├── .kiro/                        # Kiro specs and requirements
+│   └── specs/
+│       └── tandavalasya-website/
+│           ├── requirements.md
+│           ├── design.md
+│           └── tasks.md
+├── .vscode/                      # VSCode settings
 ├── public/
 │   ├── content/
 │   │   └── resume/
 │   │       ├── resume-config.yaml    # Resume configuration
 │   │       └── resume-data.yaml      # Resume content data
-│   └── images/
-│       └── resume-backgrounds/       # Profile and background images
+│   ├── images/
+│   │   └── resume-backgrounds/       # Profile and background images
+│   └── _redirects                    # Netlify SPA routing
 ├── src/
 │   ├── components/
 │   │   ├── resume/
@@ -56,12 +65,11 @@ tandavalasya-website/
 │   │   └── text-formatter.tsx       # Markdown formatter
 │   └── types/
 │       └── index.ts                 # TypeScript definitions
-└── .kiro/
-    └── specs/
-        └── tandavalasya-website/
-            ├── requirements.md       # Project requirements
-            ├── design.md            # Design specifications
-            └── tasks.md             # Implementation tasks
+├── netlify.toml                     # Netlify configuration
+├── package.json
+├── vite.config.ts
+├── tailwind.config.js
+└── README.md
 ```
 
 ## 🛠️ Installation
@@ -82,7 +90,7 @@ npm run preview
 
 ## 📝 Configuration
 
-### Resume Configuration (`resume-config.yaml`)
+### Resume Configuration (`public/content/resume/resume-config.yaml`)
 
 Controls which sections are displayed, their order, colors, fonts, and layout settings.
 
@@ -100,7 +108,7 @@ resume:
       - professional_experience
 ```
 
-### Resume Data (`resume-data.yaml`)
+### Resume Data (`public/content/resume/resume-data.yaml`)
 
 Contains all resume content including personal info, experience, education, awards, etc.
 
@@ -144,14 +152,49 @@ Click the "Download PDF" button to generate a print-optimized PDF with:
 - Preserved colors and styling
 - Optimized font sizes
 
+## 🚀 Deployment
+
+### Netlify (Automatic)
+
+The project includes `netlify.toml` for automatic configuration:
+
+1. **Connect to Git:**
+   ```bash
+   git init
+   git add .
+   git commit -m "Initial commit"
+   git branch -M main
+   git remote add origin <your-repo-url>
+   git push -u origin main
+   ```
+
+2. **Deploy on Netlify:**
+   - Go to https://app.netlify.com
+   - Click "Add new site" → "Import an existing project"
+   - Connect your Git provider
+   - Select your repository
+   - Netlify auto-detects settings from `netlify.toml`
+   - Click "Deploy site"
+
+3. **Custom Domain** (optional):
+   - Site Settings → Domain Management
+   - Add your custom domain
+
+### Manual Deployment Settings
+
+If needed, configure manually in Netlify UI:
+- **Build command**: `npm run build`
+- **Publish directory**: `dist`
+- **Node version**: 18 (or latest LTS)
+
 ## 🔧 Development
 
 ### Adding New Sections
 
-1. Update `resume-data.yaml` with new section data
+1. Update `public/content/resume/resume-data.yaml` with new section data
 2. Add section type to `src/types/index.ts`
-3. Create renderer in `ResumeSection.tsx`
-4. Enable in `resume-config.yaml`
+3. Create renderer in `src/components/resume/ResumeSection.tsx`
+4. Enable in `public/content/resume/resume-config.yaml`
 
 ### Styling Guidelines
 
